@@ -5,7 +5,7 @@ const Constraint = Matter.Constraint;
 
 var engine, world;
 var hex1;
-//var bg;
+var bg;
 var backgroundImg,platform;
 var slingShot;
 var score = 0;
@@ -67,15 +67,15 @@ function keyPressed(){
     }
 }
 async function getBackgroundColour() {
-    var response = await fetch("http://worldtimeapi.org/api/timezone/Asia/Tokyo");
+    var response = await fetch("http://worldtimeapi.org/api/timezone/Asia/Kolkata");
     var responseJSON = await response.json();
     var datetime = await responseJSON.datetime;
     var hour = datetime.slice(11,13);
     if(hour >= 6 && hour <= 19){
-        var bg = "green"
+         bg = "green"
     }
     else{
-       var bg = "blue"
+        bg = "blue"
     }
   console.log("warm kitty") 
 background(bg)
