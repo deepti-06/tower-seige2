@@ -84,7 +84,9 @@ backgroundimg= bg
 
 
 function draw(){
+    if(backgroundimg){
     background (backgroundimg)
+    }
     Engine.update(engine);
     //noStroke();
     textSize(35);
