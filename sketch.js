@@ -11,7 +11,7 @@ var slingShot;
 var score = 0;
 
 function preload() {
-    getBackgroundColour();
+getBackgroundColour();
 }
 
 function setup(){
@@ -66,26 +66,11 @@ function keyPressed(){
     slingshot.attach(hex1.body);
     }
 }
-async function getBackgroundColour() {
-    var response = await fetch("http://worldtimeapi.org/api/timezone/Asia/Kolkata");
-    var responseJSON = await response.json();
-    var datetime = await responseJSON.datetime;
-    var hour = datetime.slice(11,13);
-    if(hour >= 6 && hour <= 19){
-         bg = "green"
-    }
-    else{
-        bg = "blue"
-    }
-  console.log("warm kitty") 
-backgroundimg= bg
-}
-
 
 
 function draw(){
-    if(backgroundimg){
-    background (backgroundimg)
+    if(backgroundImg){
+   background (backgroundImg)
     }
     Engine.update(engine);
     //noStroke();
@@ -145,4 +130,20 @@ function draw(){
   //  log6.display();
   //  chain.display();    
 }
+
+async function getBackgroundColour() {
+    var response = await fetch("http://worldtimeapi.org/api/timezone/Asia/Kolkata");
+    var responseJSON = await response.json();
+    var datetime = await responseJSON.datetime;
+    var hour = datetime.slice(11,13);
+    if(hour >= 6 && hour <= 19){
+         bg = "green"
+    }
+    else{
+        bg = "blue"
+    }
+backgroundImg= bg
+}
+
+
 
