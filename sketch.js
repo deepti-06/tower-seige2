@@ -78,13 +78,13 @@ async function getBackgroundColour() {
         bg = "blue"
     }
   console.log("warm kitty") 
-background(bg)
+backgroundimg= bg
 }
 
 
 
 function draw(){
-    background (bg)
+    background (backgroundimg)
     Engine.update(engine);
     //noStroke();
     textSize(35);
